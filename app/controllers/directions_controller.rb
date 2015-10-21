@@ -1,4 +1,5 @@
 class DirectionsController < ApplicationController
+  #before_filter :authenticate_user!, :except => [:edit, :update, :destroy]
   before_action :set_direction, only: [:show, :edit, :update, :destroy]
 
   # GET /directions

@@ -1,20 +1,3 @@
-<% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %>
-
-<ul class="nav">
-  <li> <%= link_to "Направления", directions_path %></li>
-  <li><a href="#">Профессии</a></li>
-  <li><a href="#">Тест</a></li>
-  <li><a href="#">Элемент меню</a></li>
-  <li><a href="#">Элемент меню</a></li>
-  <li><a href="#">Элемент меню</a></li>
-</ul>
-
-
 <div class="home">
     <%= image_tag "cat.png", size: "600x822" %>
   <div class="slogan">

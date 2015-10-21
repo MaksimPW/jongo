@@ -17,9 +17,11 @@
         <td><%= direction.name %></td>
         <td><%= direction.descr %></td>
         <td><%= link_to 'Show', direction %></td>
+            <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_direction_path(direction) %></td>
         <td><%= link_to 'Destroy', direction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+            <% end %>
     <% end %>
   </tbody>
 </table>
