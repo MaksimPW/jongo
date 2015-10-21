@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Directions</h1>
+<h1>Направления</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Descr</th>
+      <th>Название</th>
+      <th>Описание</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +25,8 @@
     <% end %>
   </tbody>
 </table>
-
+<% if user_signed_in? %>
 <br>
 
 <%= link_to 'New Direction', new_direction_path %>
+<% end %>

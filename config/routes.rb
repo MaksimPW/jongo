@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :profs
   devise_for :users
   resources :directions
   # The priority is based upon order of creation: first created -> highest priority.
