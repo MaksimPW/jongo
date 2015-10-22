@@ -1,4 +1,5 @@
 class ProfsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_prof, only: [:show, :edit, :update, :destroy]
 
   # GET /profs

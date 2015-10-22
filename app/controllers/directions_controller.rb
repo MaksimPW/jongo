@@ -1,7 +1,9 @@
 class DirectionsController < ApplicationController
   #before_filter :authenticate_user!, :except => [:edit, :update, :destroy]
+
   before_action :set_direction, only: [:show, :edit, :update, :destroy]
 
+  load_and_authorize_resource
   # GET /directions
   # GET /directions.json
   def index
@@ -20,11 +22,13 @@ class DirectionsController < ApplicationController
 
   # GET /directions/1/edit
   def edit
+    #authorize! :update, @direction
   end
 
   # POST /directions
   # POST /directions.json
   def create
+
     @direction = Direction.new(direction_params)
 
     respond_to do |format|

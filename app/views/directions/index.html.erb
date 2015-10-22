@@ -17,16 +17,18 @@
         <td><%= direction.name %></td>
         <td><%= direction.descr %></td>
         <td><%= link_to 'Show', direction %></td>
-            <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_direction_path(direction) %></td>
-        <td><%= link_to 'Destroy', direction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+            <% if can? :update, @direction %>
+            <td><%= link_to 'Edit', edit_direction_path(direction) %></td>
             <% end %>
+            <% if can? :destroy, @direction %>
+            <td><%= link_to 'Destroy', direction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+            </tr>
+
     <% end %>
   </tbody>
 </table>
-<% if user_signed_in? %>
+
 <br>
 
 <%= link_to 'New Direction', new_direction_path %>
-<% end %>
