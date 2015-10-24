@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :blogs
   resources :profs
   devise_for :users
   resources :directions do

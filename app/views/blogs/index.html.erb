@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <center><h1>Блог</h1></center>
+  <% if can? :create, @blog %>
+      <%= link_to 'Создать', new_blog_path %>
+  <% end %>
+
+  <br>
+  <% @blogs.each do |blog| %>
+      <div class="content">
+        <%= link_to blog.title, blog %>
+        <% if can? :update, @blog %>
+            <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <% end %>
+        <% if can? :destroy, @blog %>
+            <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </div>
+  <% end %>
+</div>

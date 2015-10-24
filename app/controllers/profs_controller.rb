@@ -1,6 +1,6 @@
 class ProfsController < ApplicationController
   before_action :set_prof, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /profs
   # GET /profs.json
   def index
