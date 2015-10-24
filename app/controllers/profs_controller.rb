@@ -1,5 +1,4 @@
 class ProfsController < ApplicationController
-  load_and_authorize_resource
   before_action :set_prof, only: [:show, :edit, :update, :destroy]
 
   # GET /profs
@@ -22,15 +21,16 @@ class ProfsController < ApplicationController
   def edit
   end
 
+
   # POST /profs
   # POST /profs.json
   def create
-
-    #@direction = Direction.find(params[:direction_id])
-    #@prof = @direction.profs.create(params[:prof])
-    #redirect_to post_path(@direction)
-
-    @prof = Prof.new(prof_params)
+    if !@direction
+      @prof = Prof.new(prof_params)
+    else
+    @direction = Direction.find(params[:direction_id])
+    @prof = @direction.profs.create(prof_params)
+    end
 
     respond_to do |format|
       if @prof.save
@@ -75,6 +75,6 @@ class ProfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prof_params
-      params.require(:prof).permit(:name, :desc, :id_direction, :education)
+      params.require(:prof).permit(:name, :desc, :direction_id)
     end
 end

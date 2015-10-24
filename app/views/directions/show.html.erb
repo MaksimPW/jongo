@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @direction.name %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Descr:</strong>
-  <%= @direction.descr %>
-</p>
-
-<%= link_to 'Edit', edit_direction_path(@direction) %> |
-<%= link_to 'Back', directions_path %>
-
-
-
+<center><h1>Направление <%= @direction.name %></h1></center>
+  <br>
 <% @direction.profs.each do |prof| %>
-    <%= prof.name %>
+    <div class="content">
+    </p><%= prof.name %>
+        </div>
+<% end %>
+
+  <% if can? :create, @prof %>
+<h2>Добавить профессию:</h2>
+<%= form_for([@direction, @direction.profs.build]) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :desc %><br>
+        <%= f.text_area :desc %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+<% end %>
+    </div>
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022104614) do
+ActiveRecord::Schema.define(version: 20151024153207) do
 
   create_table "directions", force: :cascade do |t|
     t.string   "name"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20151022104614) do
 
   create_table "profs", force: :cascade do |t|
     t.string   "name"
-    t.string   "desc"
-    t.integer  "id_direction"
-    t.string   "education"
+    t.text     "desc"
+    t.integer  "direction_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "profs", ["direction_id"], name: "index_profs_on_direction_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

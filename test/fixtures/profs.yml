@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  desc: MyString
-  id_direction: 1
-  education: MyString
+  desc: MyText
+  direction_id: 
 
 two:
   name: MyString
-  desc: MyString
-  id_direction: 1
-  education: MyString
+  desc: MyText
+  direction_id: 

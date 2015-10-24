@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-    <center><h1>Профессии</h1></center>
+  <center><h1>Профессии</h1></center>
   <% if can? :create, @prof %>
-      <%= link_to "Создать", new_prof_path %>
+      <%= link_to 'Создать', new_prof_path %>
   <% end %>
 
   <br>
   <% @profs.each do |prof| %>
-    <div class="content">
-      <%= link_to prof.name, prof %>
-      <% if can? :update, @prof %>
-          <td><%= link_to 'Edit', edit_prof_path(prof) %></td>
-      <% end %>
-      <% if can? :destroy, @prof %>
-          <td><%= link_to 'Destroy', prof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </div>
+      <div class="content">
+        <%= link_to prof.name, prof %>
+        <% if can? :update, @prof %>
+            <td><%= link_to 'Edit', edit_prof_path(prof) %></td>
+        <% end %>
+        <% if can? :destroy, @prof %>
+            <td><%= link_to 'Destroy', prof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </div>
   <% end %>
 </div>
