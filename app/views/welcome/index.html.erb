@@ -1,14 +1,16 @@
-<div class="home">
-    <%= image_tag "cat.png", size: "600x822" %>
+<div class="container">
+  <div class="cat"><%= image_tag "cat.png", size: "600x822" %></div>
   <div class="slogan">
-    <h1>Слоган</h1>
-    <p>То, что мы делаем
-      lorem lorem lorem
-      lorem lorem lorem
-    </p>
-    <%= link_to "Тесты", root_path %>
-    <%= link_to "Свой путь", directions_path %>
+    <div class="content">
+      <center><h1>Слоган:</h1>
+        <br>
+        Нужно хорошо делать свое дело, тогда у вас все будет круто :)
+        <br>
+        <br>
+        <%= link_to "Свой путь", directions_path %>
+        <br>
+        <%= link_to "Тесты", root_path %>
+      </center>
+    </div>
   </div>
 </div>
-
-

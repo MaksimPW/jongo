@@ -25,6 +25,11 @@ class ProfsController < ApplicationController
   # POST /profs
   # POST /profs.json
   def create
+
+    #@direction = Direction.find(params[:direction_id])
+    #@prof = @direction.profs.create(params[:prof])
+    #redirect_to post_path(@direction)
+
     @prof = Prof.new(prof_params)
 
     respond_to do |format|

@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/*
 .home{
     margin: 50px 400px;
 }
@@ -40,20 +41,20 @@
 
 .nav{margin:0;padding-left:0;text-align:center}
 .nav>li {
-    display: inline-block; /* Строчно-блочные элементы */
-    background: #cac2a3; /* Цвет фона */
-    margin-right: 10px; /* Расстояние между пунктами меню */
+    display: inline-block;
+    background: #cac2a3;
+    margin-right: 10px;
 
 }
 .nav>li>a {
-    color: #fff; /* Цвет ссылок */
-    display: block; /* Блочный элемент */
-    padding: 15px 25px; /* Поля вокруг текста */
-    text-decoration: none; /* Убираем подчёркивание */
+    color: #fff;
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
     font-size: 30px;
 }
 .nav>li:hover {
-    background: #333; /* Цвет фона при наведении курсора мыши */
+    background: #333;
 }
 
 .btn {
@@ -81,4 +82,87 @@
     background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
+}
+
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(255, 121, 158, 0.06);
+    font: 600 12px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}
+
+/* navigation */
+
+#mainmenu {
+    position: relative;
+    overflow:hidden;
+    height:40px;
+    margin:20px 0;
+}
+#mainmenu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    position: relative;
+    left:50%;
+    float:left;
+    height:30px;
+}
+#mainmenu ul li {
+    position:relative;
+    left:-50%;
+    float:left;
+    margin:0 5px;
+    height:50px;
+    background: #ffffff;
+    font-size: 1.6em;
+}
+#mainmenu ul li a {
+    display:block;
+    text-decoration:none;
+    padding: 10px 20px;
+    color: #000000;
+}
+#mainmenu ul li a:hover {
+    background-color:#444;
+    color:#ffffff;
+}
+
+/* container */
+
+.container {
+    display: table;
+    margin: auto;
+    width: 900px;
+    list-style:none;
+    padding:0;
+}
+
+.cat {
+    float: left;
+    width: 600px;
+    margin: -50px;
+}
+
+.slogan {
+    float: left;
+    margin-top: 200px;
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+}
+
+
+.login{
+    width: 100%;
+    background: rgba(171, 250, 230, 0.2);
+}
+
+.content{
+    background: #ffffff;
+    padding: 15px;
 }
